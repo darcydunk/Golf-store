@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Golf Gear Shop - Premium Equipment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #006633, #004d26);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    header h1 {
+      font-size: 3.5em;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
+    nav {
+      background-color: #004d26;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1em;
+      margin: 0 20px;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background-color: #00875d;
+    }
+
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1561935170-c1217a0c2f96?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDd8fGdvbGYlMjBwbGF5ZXJ8ZW58MHx8fHwxNjcwNjgxMDAw&ixlib=rb-1.2.1&q=80&w=1080');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h2 {
+      font-size: 3em;
+      font-weight: 600;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .search-container {
+      text-align: center;
+      margin-top: 20px;
+      padding: 20px;
+    }
+
+    .search-container input {
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+
+    .search-container button {
+      padding: 10px 20px;
+      background-color: #004d26;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1em;
+      cursor: pointer;
+    }
+
+    .search-container button:hover {
+      background-color: #006633;
+    }
+
+    .category-section {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0;
+    }
+
+    .category {
+      background-color: white;
+      padding: 20px;
+      margin: 0 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .category:hover {
+      transform: scale(1.05);
+    }
+
+    .category h3 {
+      font-size: 1.5em;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .products-section {
+      display: none;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .product {
+      display: inline-block;
+      background-color: white;
+      width: 200px;
+      margin: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .product img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .product h4 {
+      font-size: 1.3em;
+      margin-top: 10px;
+    }
+
+    .product p {
+      font-size: 1.1em;
+      color: #00875d;
+      margin: 10px 0;
+    }
+
+    .product .description {
+      font-size: 1em;
+      color: #666;
+      margin: 15px 0;
+    }
+
+    .btn-shop-now {
+      background-color: #006633;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1.1em;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-shop-now:hover {
+      background-color: #004d26;
+    }
+
+    footer {
+      background-color: #004d26;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Golf Gear Shop</h1>
+    <p>Your ultimate source for premium golf equipment</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#products">Shop Now</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#about">About Us</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero" id="home">
+    <h2>Level Up Your Golf Game</h2>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="search-container">
+    <input type="text" id="search-bar" placeholder="Search for golf products...">
+    <button onclick="searchProducts()">Search</button>
+  </div>
+
+  <!-- Categories Section -->
+  <div class="category-section">
+    <div class="category" onclick="showProducts('clubs')">
+      <h3>Golf Clubs</h3>
+    </div>
+    <div class="category" onclick="showProducts('accessories')">
+      <h3>Golf Accessories</h3>
+    </div>
+    <div class="category" onclick="showProducts('clothing')">
+      <h3>Golf Clothing</h3>
+    </div>
+  </div>
+
+  <!-- Product Display Section -->
+  <div class="products-section" id="products">
+    <div id="clubs" class="product-category">
+      <h2>Golf Clubs</h2>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1567438984-bada03bba97f?fit=crop&w=500&h=500&q=80" alt="Driver">
+        <h4>Driver</h4>
+        <p>$349</p>
+        <p class="description">Maximize your distance off the tee with this ultra-lightweight driver.</p>
+        <a href="#" class="btn-shop-now">Shop Now</a>
+      </div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1564971075-e7388a7b6632?fit=crop&w=500&h=500&q=80" alt="Irons">
+        <h4>Irons (3-9)</h4>
+        <p>$599</p>
+        <p class="description">Complete set of irons with precise control and distance.</p>
+        <a href="#" class="btn-shop-now">Shop Now</a>
+      </div>
+    </div>
+
+    <div id="accessories" class="product-category">
+      <h2>Golf Accessories</h2>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1606902799982-15335c8e74cc?auto=format&fit=crop&w=500&q=80" alt="Golf Towel">
+        <h4>Golf Towel</h4>
+        <p>$15</p>
+        <p class="description">High-quality towel for cleaning clubs and balls.</p>
+        <a href="#" class="btn-shop-now">Shop Now</a>
+      </div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1576902070434-709d264fc9bb?auto=format&fit=crop&w=500&q=80" alt="Rangefinder">
+        <h4>Rangefinder</h4>
+        <p>$229</p>
+        <p class="description">Accurate distance measurement for perfect shots.</p>
+        <a href="#" class="btn-shop-now">Shop Now</a>
+      </div>
+    </div>
+
+    <div id="clothing" class="product-category">
+      <h2>Golf Clothing</h2>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1572436802032-d0d2c0d074fa?auto=format&fit=crop&w=500&q=80" alt="Polo Shirt">
+        <h4>Polo Shirt</h4>
+        <p>$50</p>
+        <p class="description">Comfortable and breathable polo for your game.</p>
+        <a href="#" class="btn-shop-now">Shop Now</a>
+      </div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1593587244981-8e88a431d5db?auto=format&fit=crop&w=500&q=80" alt="Golf Shorts">
+        <h4>Golf Shorts</h4>
+        <p>$45</p>
+        <p class="description">Perfect for those warm days on the course.</p>
+        <a href="#" class="btn-shop-now">Shop Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Golf Gear Shop. All rights reserved. | <a href="#about">About Us</a> | <a href="mailto:info@golfgear.com">Contact</a></p>
+  </footer>
+
+  <script>
+    function showProducts(category) {
+      document.querySelectorAll('.product-category').forEach(function (section) {
+        section.style.display = 'none';
+      });
+      document.getElementById(category).style.display = 'block';
+    }
+
+    function searchProducts() {
+      const query = document.getElementById('search-bar').value.toLowerCase();
+      alert('Search results for: ' + query);
+      // Here you could add a real search function.
+    }
+  </script>
+
+</body>
+</html>
+
